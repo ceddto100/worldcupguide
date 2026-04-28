@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
@@ -15,9 +16,10 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-navy-950/80 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-black/70 backdrop-blur-lg">
       <div className="container-page flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <span className="inline-block h-7 w-7 rounded-md bg-gold" aria-hidden />
@@ -27,15 +29,24 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="rounded-full px-3 py-2 text-sm text-white/80 transition hover:bg-white/5 hover:text-white"
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const active = pathname === l.href;
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                aria-current={active ? "page" : undefined}
+                className={[
+                  "relative rounded-full px-3 py-2 text-sm font-medium transition",
+                  active
+                    ? "bg-gold/15 text-gold after:absolute after:bottom-0.5 after:left-3 after:right-3 after:h-0.5 after:rounded-full after:bg-gold after:content-['']"
+                    : "text-white/75 hover:bg-white/5 hover:text-white"
+                ].join(" ")}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
           <Link href="/submit" className="btn-primary ml-2">
             Submit
           </Link>
@@ -57,18 +68,30 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-navy-900 lg:hidden">
+        <div className="border-t border-white/10 bg-black/80 backdrop-blur-lg lg:hidden">
           <div className="container-page flex flex-col py-3">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-sm text-white/85 hover:bg-white/5"
-              >
-                {l.label}
-              </Link>
-            ))}
+            {links.map((l) => {
+              const active = pathname === l.href;
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  aria-current={active ? "page" : undefined}
+                  onClick={() => setOpen(false)}
+                  className={[
+                    "flex items-center gap-2 rounded-lg px-3 py-3 text-sm font-medium transition",
+                    active
+                      ? "bg-gold/15 text-gold"
+                      : "text-white/80 hover:bg-white/5 hover:text-white"
+                  ].join(" ")}
+                >
+                  {active && (
+                    <span className="inline-block h-1.5 w-1.5 flex-none rounded-full bg-gold" aria-hidden />
+                  )}
+                  {l.label}
+                </Link>
+              );
+            })}
             <Link
               href="/submit"
               onClick={() => setOpen(false)}
