@@ -1,83 +1,109 @@
 import type { Match } from "@/lib/types";
 
-// Placeholder data. Atlanta is a confirmed 2026 host city (Mercedes-Benz Stadium).
-// Teams and exact times are placeholders until the draw is finalized.
 export const matches: Match[] = [
   {
     id: "atl-m1",
-    slug: "atl-group-stage-1",
-    date: "June 13, 2026",
-    time: "3:00 PM ET (placeholder)",
-    teamA: "Team A",
-    teamB: "Team B",
+    slug: "atl-group-h-spain-vs-cabo-verde",
+    date: "June 15, 2026",
+    time: "12:00 PM ET",
+    teamA: "Spain",
+    teamB: "Cabo Verde",
     venue: "Mercedes-Benz Stadium",
     stage: "Group Stage",
     isAtlanta: true,
     ctaUrl: "/matches",
     createdAt: "2026-01-01",
-    updatedAt: "2026-01-01"
+    updatedAt: "2026-04-28"
   },
   {
     id: "atl-m2",
-    slug: "atl-group-stage-2",
-    date: "June 19, 2026",
-    time: "Evening kickoff (placeholder)",
-    teamA: "Team C",
-    teamB: "Team D",
+    slug: "atl-group-a-south-africa-vs-congo-dr",
+    date: "June 18, 2026",
+    time: "12:00 PM ET",
+    teamA: "South Africa",
+    teamB: "Congo DR",
     venue: "Mercedes-Benz Stadium",
     stage: "Group Stage",
     isAtlanta: true,
     ctaUrl: "/matches",
     createdAt: "2026-01-01",
-    updatedAt: "2026-01-01"
+    updatedAt: "2026-04-28"
   },
   {
     id: "atl-m3",
-    slug: "atl-group-stage-3",
-    date: "June 24, 2026",
-    time: "Afternoon kickoff (placeholder)",
-    teamA: "Team E",
-    teamB: "Team F",
+    slug: "atl-group-h-spain-vs-saudi-arabia",
+    date: "June 21, 2026",
+    time: "12:00 PM ET",
+    teamA: "Spain",
+    teamB: "Saudi Arabia",
     venue: "Mercedes-Benz Stadium",
     stage: "Group Stage",
     isAtlanta: true,
     ctaUrl: "/matches",
     createdAt: "2026-01-01",
-    updatedAt: "2026-01-01"
+    updatedAt: "2026-04-28"
   },
   {
     id: "atl-m4",
+    slug: "atl-group-c-morocco-vs-haiti",
+    date: "June 24, 2026",
+    time: "6:00 PM ET",
+    teamA: "Morocco",
+    teamB: "Haiti",
+    venue: "Mercedes-Benz Stadium",
+    stage: "Group Stage",
+    isAtlanta: true,
+    ctaUrl: "/matches",
+    createdAt: "2026-01-01",
+    updatedAt: "2026-04-28"
+  },
+  {
+    id: "atl-m5",
+    slug: "atl-group-k-congo-dr-vs-uzbekistan",
+    date: "June 27, 2026",
+    time: "7:30 PM ET",
+    teamA: "Congo DR",
+    teamB: "Uzbekistan",
+    venue: "Mercedes-Benz Stadium",
+    stage: "Group Stage",
+    isAtlanta: true,
+    ctaUrl: "/matches",
+    createdAt: "2026-01-01",
+    updatedAt: "2026-04-28"
+  },
+  {
+    id: "atl-m6",
     slug: "atl-round-of-32",
-    date: "June 30, 2026",
-    time: "TBA",
-    teamA: "TBD",
-    teamB: "TBD",
+    date: "July 1, 2026",
+    time: "12:00 PM ET",
+    teamA: "1st, Group L",
+    teamB: "Best 3rd (Groups E/H/I/J/K)",
     venue: "Mercedes-Benz Stadium",
     stage: "Round of 32",
     isAtlanta: true,
     ctaUrl: "/matches",
     createdAt: "2026-01-01",
-    updatedAt: "2026-01-01"
+    updatedAt: "2026-04-28"
   },
   {
-    id: "atl-m5",
+    id: "atl-m7",
     slug: "atl-round-of-16",
     date: "July 7, 2026",
-    time: "TBA",
-    teamA: "TBD",
-    teamB: "TBD",
+    time: "12:00 PM ET",
+    teamA: "Winner Match 86",
+    teamB: "Winner Match 88",
     venue: "Mercedes-Benz Stadium",
     stage: "Round of 16",
     isAtlanta: true,
     ctaUrl: "/matches",
     createdAt: "2026-01-01",
-    updatedAt: "2026-01-01"
+    updatedAt: "2026-04-28"
   },
   {
-    id: "atl-m6",
+    id: "atl-m8",
     slug: "atl-semifinal",
-    date: "July 14, 2026",
-    time: "TBA",
+    date: "July 15, 2026",
+    time: "3:00 PM ET",
     teamA: "TBD",
     teamB: "TBD",
     venue: "Mercedes-Benz Stadium",
@@ -85,6 +111,6 @@ export const matches: Match[] = [
     isAtlanta: true,
     ctaUrl: "/matches",
     createdAt: "2026-01-01",
-    updatedAt: "2026-01-01"
+    updatedAt: "2026-04-28"
   }
 ];

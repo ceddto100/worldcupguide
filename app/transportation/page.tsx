@@ -12,10 +12,15 @@ export const metadata: Metadata = {
 const sections: { title: string; body: string; bullets?: string[] }[] = [
   {
     title: "MARTA",
-    body: "MARTA is Atlanta's rail and bus system and the easiest way to reach downtown, Mercedes-Benz Stadium, and Fan Fest on matchdays. Buy a Breeze card at any station or use the MARTA mobile app.",
+    body: "MARTA is Atlanta's rail and bus system and the easiest way to reach downtown, Mercedes-Benz Stadium, and the FIFA Fan Festival™ on matchdays. Tap to pay with any credit card, phone, or smartwatch via the new Better Breeze system — no Breeze card required.",
     bullets: [
-      "GWCC/CNN Center, Peachtree Center, and Five Points stations serve downtown and Fan Fest",
-      "Airport line (ATL Airport to downtown) runs every ~15 minutes",
+      "Best stadium station: Vine City (Blue/Green Line) — covered pedestrian bridge walks directly to the stadium",
+      "Also convenient: SEC District Station (formerly GWCC/CNN Center) — one stop before Vine City, at the stadium entrance",
+      "Downtown and Fan Fest: SEC District, Five Points, Peachtree Center, and Garnett stations",
+      "Airport → Five Points: ~20 minutes; transfer there for Vine City or SEC District",
+      "Match days: trains run at 5-minute headways (confirmed by MARTA)",
+      "30+ buses staged as rapid-response fleet at 5 strategic stations on match days",
+      "MARTA Transit Ambassadors deployed 12 hours/day — white jerseys on match days, black on non-match days",
       "Expect heavy ridership before and after matches — plan 30+ minutes of buffer"
     ]
   },
@@ -39,11 +44,11 @@ const sections: { title: string; body: string; bullets?: string[] }[] = [
   },
   {
     title: "Parking",
-    body: "Stadium-area parking books up fast and is expensive on matchdays. Use MARTA if you can. If you must drive, reserve in advance.",
+    body: "Stadium-area parking books up fast and is very expensive on matchdays. Use MARTA if you can. If you must drive, reserve in advance — official FIFA parking lots start at $99.99.",
     bullets: [
-      "Pre-book lots through apps like SpotHero or ParkMobile",
-      "Expect $40–$80+ for stadium-adjacent lots on match days",
-      "Neighborhood lots (Castleberry Hill, Midtown) can be cheaper plus a short walk/MARTA ride"
+      "Pre-book lots through apps like SpotHero or ParkMobile, or via the official FIFA ticketing platform",
+      "Official FIFA parking: $99.99 for the opening match (June 15) up to $249.99 for the Semifinal (July 15)",
+      "Neighborhood lots (Castleberry Hill, Midtown) can be cheaper with a short walk or one MARTA stop"
     ]
   },
   {
@@ -51,7 +56,7 @@ const sections: { title: string; body: string; bullets?: string[] }[] = [
     body: "Hartsfield-Jackson (ATL) is the busiest airport in the country. The fastest way from the airport to downtown is MARTA.",
     bullets: [
       "Follow signs for 'Ground Transportation' → MARTA",
-      "Airport to Peachtree Center station: ~20 minutes",
+      "Airport to Five Points or Peachtree Center: ~20 minutes",
       "Rideshare pickups are on the upper level during peak hours"
     ]
   },
@@ -65,12 +70,12 @@ const sections: { title: string; body: string; bullets?: string[] }[] = [
     ]
   },
   {
-    title: "Fan Fest access",
-    body: "Fan Fest at Centennial Olympic Park is open to the public and walkable from multiple MARTA stations. Entry details will update once officially published.",
+    title: "FIFA Fan Festival™ access",
+    body: "The FIFA Fan Festival™ Atlanta at Centennial Olympic Park is free with advance registration (atlantafwc26.com). It's walkable from multiple MARTA stations and open on 16 selected days between June 12 and July 15.",
     bullets: [
-      "Walkable from Peachtree Center and GWCC/CNN Center stations",
-      "Big crowds for evening matches — plan extra time",
-      "Family zones typically open earlier in the day"
+      "Closest MARTA stations: SEC District and Peachtree Center (both short walks)",
+      "Big crowds before and during evening matches — arrive early, capacity limits apply",
+      "All four festival zones open throughout the day; Main Stage concerts typically in the evening"
     ]
   },
   {
