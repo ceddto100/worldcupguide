@@ -6,56 +6,110 @@
   color-scheme: dark;
 }
 
+/* ─── Background image (fixed, full-screen) ─────────────────────────────── */
 html,
 body {
-  background-color: #05070E;
   color: #F4F4F5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  background-color: #05070E;
 }
 
+.site-bg {
+  background-color: #05070E;
+}
+
+/* Fixed background image — stays still while content scrolls */
+.bg-image {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/fifa_background.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+/* Gradient overlay: strong at bottom, lighter at top so hero imagery shines */
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 7, 14, 0.55) 0%,
+      rgba(5, 7, 14, 0.70) 40%,
+      rgba(5, 7, 14, 0.88) 100%
+    );
+}
+
+/* ─── Component library ─────────────────────────────────────────────────── */
 @layer components {
   .container-page {
     @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 
+  /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-semibold text-navy-950 transition hover:bg-gold-soft focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy-950;
+    @apply inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-semibold text-navy-950 shadow-lg shadow-gold/30 transition hover:bg-gold-soft hover:shadow-gold/50 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-transparent;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40;
+    @apply inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/50 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/40;
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium text-white/80 transition hover:text-white;
   }
 
+  /* Cards — glass morphism over the background image */
   .card {
-    @apply rounded-2xl border border-white/10 bg-navy-800/60 p-5 shadow-card backdrop-blur-sm transition hover:border-white/20;
+    @apply rounded-2xl border border-white/15 bg-black/40 p-5 shadow-card backdrop-blur-md transition hover:border-white/30 hover:bg-black/50;
   }
 
   .card-featured {
-    @apply border-gold/40 bg-gradient-to-b from-navy-700/80 to-navy-800/60 shadow-gold;
+    @apply border-gold/50 bg-gradient-to-b from-gold/10 to-black/50 shadow-gold backdrop-blur-md;
   }
 
+  /* Badges */
   .badge {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs font-medium text-white/80;
+    @apply inline-flex items-center rounded-full border border-white/15 bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white/85 backdrop-blur-sm;
   }
 
   .badge-gold {
-    @apply inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-gold;
+    @apply inline-flex items-center rounded-full border border-gold/50 bg-gold/15 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-gold;
   }
 
   .badge-red {
-    @apply inline-flex items-center rounded-full border border-red-accent/40 bg-red-accent/10 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-red-accent;
+    @apply inline-flex items-center rounded-full border border-red-accent/50 bg-red-accent/15 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-red-accent;
   }
 
+  /* Form inputs */
   .input-base {
-    @apply w-full rounded-xl border border-white/10 bg-navy-900/60 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-gold/60 focus:outline-none focus:ring-2 focus:ring-gold/30;
+    @apply w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/40 backdrop-blur-sm focus:border-gold/60 focus:outline-none focus:ring-2 focus:ring-gold/30;
   }
 
+  /* Section spacing */
   .section-spacing {
     @apply py-14 sm:py-20;
   }
+
+  /* Glass panel — heavier blur for sidebar/aside elements */
+  .glass-panel {
+    @apply rounded-2xl border border-white/15 bg-black/55 p-6 backdrop-blur-xl;
+  }
+}
+
+/* ─── Utility tweaks ─────────────────────────────────────────────────────── */
+
+/* Subtle text-shadow to lift headings over the background */
+h1, h2, h3 {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Gold glow on the accent color */
+.text-gold {
+  text-shadow: 0 0 20px rgba(245, 197, 24, 0.35);
 }

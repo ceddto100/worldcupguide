@@ -45,10 +45,17 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-navy-950 text-white antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+      <body className="site-bg min-h-screen text-white antialiased">
+        {/* Fixed background image layer */}
+        <div className="bg-image" aria-hidden />
+        {/* Dark overlay so content is always readable */}
+        <div className="bg-overlay" aria-hidden />
+
+        <div className="relative z-10 flex min-h-screen flex-col">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

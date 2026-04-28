@@ -43,7 +43,7 @@ export default function HomePage() {
       {/* Fan Fest callout */}
       <section className="section-spacing">
         <div className="container-page">
-          <div className="grid gap-6 overflow-hidden rounded-2xl border border-white/10 bg-navy-800/60 p-6 sm:p-10 md:grid-cols-[1.1fr_0.9fr]">
+          <div className="grid gap-6 overflow-hidden rounded-2xl border border-white/15 bg-black/45 p-6 backdrop-blur-md sm:p-10 md:grid-cols-[1.1fr_0.9fr]">
             <div>
               <span className="badge-red">Fan Fest</span>
               <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">

@@ -27,8 +27,8 @@ const config: Config = {
         display: ["ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"]
       },
       boxShadow: {
-        card: "0 8px 24px -10px rgba(0,0,0,0.45)",
-        gold: "0 0 0 1px rgba(245,197,24,0.25), 0 10px 30px -12px rgba(245,197,24,0.25)"
+        card: "0 8px 32px -10px rgba(0,0,0,0.65)",
+        gold: "0 0 0 1px rgba(245,197,24,0.35), 0 10px 30px -12px rgba(245,197,24,0.35)"
       },
       borderRadius: {
         xl2: "1.25rem"
