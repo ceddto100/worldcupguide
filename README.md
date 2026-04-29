@@ -51,6 +51,18 @@ npm run typecheck  # tsc --noEmit
 
 ---
 
+## Trip Planner (`/itinerary`)
+
+A mobile-first, step-by-step **Travel Itinerary Workflow Builder** lives at `/itinerary`. It walks users through five collapsible workflow cards in sequence — Transportation → Accommodations → Event Scheduler → Budget → Packing — and ends with PDF export and email send.
+
+- **Stack:** React + `@dnd-kit/sortable` for drag-and-drop, Next.js API routes, MongoDB (optional), Google OAuth + Gmail API (optional), `pdfkit` for PDF.
+- **Storage:** local-first via `lib/itinerary/storage.ts`. Set `MONGODB_URI` to additionally sync to MongoDB through `app/api/itinerary/route.ts`.
+- **Auth:** demo sign-in works out of the box. Set `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REDIRECT_URI` to enable real Google OAuth via `app/api/auth/google/route.ts`.
+- **PDF export:** `POST /api/itinerary/export` — built with pdfkit, includes cover page, transport summary, accommodations, day-by-day timeline, budget summary, and packing list.
+- **Email:** `POST /api/itinerary/email` — sends the PDF over the Gmail API when `GOOGLE_REFRESH_TOKEN` + `GOOGLE_SENDER_EMAIL` are set, or falls back to `SUBMIT_WEBHOOK_URL` (Make.com / n8n).
+- **Admin:** sign in as `admin@worldcupatlguide.com` (or set `ADMIN_EMAIL`) to see all users, trips, and export activity at `/itinerary/admin`.
+- **Extras:** trip templates (honeymoon, solo backpacking, family, business, road trip), duplicate trip, view-only share link, collaborator invites, print-optimized view, completion progress bar.
+
 ## Folder structure
 
 ```

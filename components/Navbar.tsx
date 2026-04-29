@@ -11,6 +11,7 @@ const links = [
   { href: "/businesses", label: "Businesses" },
   { href: "/neighborhoods", label: "Neighborhoods" },
   { href: "/transportation", label: "Transportation" },
+  { href: "/itinerary", label: "Trip Planner" },
   { href: "/business-services", label: "For Businesses" }
 ];
 
