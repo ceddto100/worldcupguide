@@ -4,7 +4,7 @@ import { AuthProvider } from "@/components/itinerary/AuthContext";
 export const metadata: Metadata = {
   title: "Trip Planner — Build your itinerary step by step",
   description:
-    "Plan transportation, stays, daily events, budget, and packing — all in one mobile-first workflow."
+    "Build your trip as a visual workflow — pick matches, events, and stops, one node at a time."
 };
 
 export default function ItineraryLayout({ children }: { children: React.ReactNode }) {

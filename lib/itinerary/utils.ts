@@ -38,13 +38,12 @@ export function sectionCompletion(trip: Trip): CompletionMap {
   const events = trip.events.length > 0;
   const budget =
     trip.budget.cap > 0 || trip.budget.items.length > 0;
-  const packing = trip.packing.some((p) => p.checked) || trip.packing.length > 0;
-  return { transport, stays, events, budget, packing };
+  return { transport, stays, events, budget };
 }
 
 export function completionPercent(trip: Trip): number {
   const map = sectionCompletion(trip);
-  const required: WorkflowSection[] = ["transport", "stays", "events", "packing"];
+  const required: WorkflowSection[] = ["transport", "stays", "events"];
   const required_done = required.filter((k) => map[k]).length;
   // Budget is optional but contributes a small bonus
   const bonus = map.budget ? 1 : 0;

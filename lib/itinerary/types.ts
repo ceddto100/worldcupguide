@@ -106,13 +106,6 @@ export type Budget = {
   items: BudgetItem[];
 };
 
-export type PackingItem = {
-  id: string;
-  category: "clothing" | "toiletries" | "documents" | "gear";
-  label: string;
-  checked: boolean;
-};
-
 export type Collaborator = {
   email: string;
   role: "edit" | "view";
@@ -130,7 +123,6 @@ export type Trip = {
   stays: Accommodation[];
   events: ItineraryEvent[];
   budget: Budget;
-  packing: PackingItem[];
   template?: string;
   collaborators: Collaborator[];
   shareSlug?: string; // for view-only link
@@ -142,7 +134,6 @@ export type WorkflowSection =
   | "transport"
   | "stays"
   | "events"
-  | "budget"
-  | "packing";
+  | "budget";
 
 export type CompletionMap = Record<WorkflowSection, boolean>;
