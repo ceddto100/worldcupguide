@@ -25,7 +25,6 @@ import { WorkflowCard } from "./WorkflowCard";
 import { TransportationSection } from "./sections/TransportationSection";
 import { AccommodationsSection } from "./sections/AccommodationsSection";
 import { BudgetSection } from "./sections/BudgetSection";
-import { PackingListSection } from "./sections/PackingListSection";
 
 type PickerState = { open: boolean; insertAt: number };
 type EditState = { open: boolean; event: ItineraryEvent | null };
@@ -249,7 +248,7 @@ export function WorkflowCanvas({ initial, readOnly = false }: { initial: Trip; r
         >
           <span className="text-sm font-semibold">Trip details</span>
           <span className="flex items-center gap-2 text-xs text-white/60">
-            Transport · Stays · Budget · Packing
+            Transport · Stays · Budget
             <svg
               className={["h-4 w-4 transition-transform", detailsOpen ? "rotate-180" : ""].join(" ")}
               viewBox="0 0 24 24"
@@ -290,15 +289,6 @@ export function WorkflowCanvas({ initial, readOnly = false }: { initial: Trip; r
               badge={trip.budget.cap > 0 ? <span className="badge">{trip.budget.currency} {trip.budget.cap}</span> : null}
             >
               <BudgetSection trip={trip} onChange={onChange} />
-            </WorkflowCard>
-            <WorkflowCard
-              step={4}
-              title="Packing List"
-              subtitle="Don't forget anything"
-              done={trip.packing.some((p) => p.checked)}
-              badge={trip.packing.length > 0 ? <span className="badge">{trip.packing.filter((p) => p.checked).length}/{trip.packing.length}</span> : null}
-            >
-              <PackingListSection trip={trip} onChange={onChange} />
             </WorkflowCard>
           </div>
         )}

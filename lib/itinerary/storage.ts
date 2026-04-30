@@ -21,7 +21,8 @@ function readAll(): Trip[] {
   try {
     const raw = window.localStorage.getItem(KEY);
     if (!raw) return [];
-    return JSON.parse(raw) as Trip[];
+    const parsed = JSON.parse(raw) as Array<Trip & { packing?: unknown }>;
+    return parsed.map(({ packing: _drop, ...t }) => t as Trip);
   } catch {
     return [];
   }
@@ -109,7 +110,6 @@ export function createTrip(opts: {
     stays: seed.stays ?? [],
     events: seed.events ?? [],
     budget: seed.budget ?? { cap: 0, currency: "USD", items: [] },
-    packing: seed.packing ?? [],
     template: seed.template,
     collaborators: [],
     createdAt: now,

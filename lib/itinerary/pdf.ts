@@ -181,23 +181,6 @@ export async function buildTripPdf(trip: Trip): Promise<Buffer> {
         });
       }
 
-      // ----- Packing -----
-      if (trip.packing.length > 0) {
-        sectionTitle("Packing list");
-        const groups = ["clothing", "toiletries", "documents", "gear"] as const;
-        groups.forEach((g) => {
-          const items = trip.packing.filter((p) => p.category === g);
-          if (items.length === 0) return;
-          doc.fillColor(NAVY).font("Helvetica-Bold").fontSize(11)
-            .text(g.charAt(0).toUpperCase() + g.slice(1));
-          items.forEach((p) => {
-            doc.fillColor(TEXT).font("Helvetica").fontSize(10)
-              .text(`${p.checked ? "☑" : "☐"}  ${p.label}`);
-          });
-          doc.moveDown(0.2);
-        });
-      }
-
       doc.end();
     } catch (e) {
       reject(e);
