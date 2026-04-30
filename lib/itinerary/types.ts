@@ -66,6 +66,11 @@ export type EventCategory =
   | "free"
   | "ceremony";
 
+export type EventSource =
+  | { type: "match"; refId: string; refSlug?: string }
+  | { type: "event"; refId: string; refSlug?: string }
+  | { type: "custom" };
+
 export type ItineraryEvent = {
   id: string;
   date: string; // YYYY-MM-DD
@@ -78,6 +83,7 @@ export type ItineraryEvent = {
   notes?: string;
   attendees: string[];
   manualOrder?: number;
+  source?: EventSource;
 };
 
 export type BudgetCategory =

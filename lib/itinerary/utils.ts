@@ -162,6 +162,45 @@ export function accommodationIcon(t: string): string {
   }
 }
 
+export function chainedEvents(trip: Trip) {
+  return trip.events.slice().sort((a, b) => {
+    const ao = a.manualOrder;
+    const bo = b.manualOrder;
+    if (ao !== undefined && bo !== undefined) return ao - bo;
+    if (ao !== undefined) return -1;
+    if (bo !== undefined) return 1;
+    const ad = (a.date ?? "") + " " + (a.startTime ?? "99:99");
+    const bd = (b.date ?? "") + " " + (b.startTime ?? "99:99");
+    return ad.localeCompare(bd);
+  });
+}
+
+export function reflowChain(events: { id: string; manualOrder?: number }[]) {
+  return events.map((ev, i) => ({ ...ev, manualOrder: (i + 1) * 10 }));
+}
+
+export function parseUSDate(date?: string): string | null {
+  if (!date) return null;
+  // Try direct ISO first
+  const iso = /^\d{4}-\d{2}-\d{2}/.exec(date);
+  if (iso) return iso[0];
+  const parsed = Date.parse(date);
+  if (Number.isNaN(parsed)) return null;
+  return new Date(parsed).toISOString().slice(0, 10);
+}
+
+export function parseTime12h(time?: string): string | undefined {
+  if (!time) return undefined;
+  const m = /^(\d{1,2}):(\d{2})\s*(AM|PM)?/i.exec(time.trim());
+  if (!m) return undefined;
+  let h = parseInt(m[1], 10);
+  const min = m[2];
+  const ap = m[3]?.toUpperCase();
+  if (ap === "PM" && h < 12) h += 12;
+  if (ap === "AM" && h === 12) h = 0;
+  return `${h.toString().padStart(2, "0")}:${min}`;
+}
+
 export function sortedEventsForDay(trip: Trip, day: string) {
   return trip.events
     .filter((e) => e.date === day)

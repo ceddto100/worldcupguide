@@ -2,7 +2,7 @@
 
 import { use, useEffect, useState } from "react";
 import Link from "next/link";
-import { WorkflowBuilder } from "@/components/itinerary/WorkflowBuilder";
+import { WorkflowCanvas } from "@/components/itinerary/WorkflowCanvas";
 import { getTrip } from "@/lib/itinerary/storage";
 import type { Trip } from "@/lib/itinerary/types";
 
@@ -36,7 +36,7 @@ export default function TripPage({ params }: { params: Promise<{ id: string }> }
       <Link href="/itinerary" className="mb-3 inline-flex items-center gap-1 text-xs text-white/60 hover:text-white">
         ← All trips
       </Link>
-      <WorkflowBuilder initial={trip} />
+      <WorkflowCanvas initial={trip} />
     </div>
   );
 }

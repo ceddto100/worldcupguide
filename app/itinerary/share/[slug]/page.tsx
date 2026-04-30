@@ -2,7 +2,7 @@
 
 import { use, useEffect, useState } from "react";
 import Link from "next/link";
-import { WorkflowBuilder } from "@/components/itinerary/WorkflowBuilder";
+import { WorkflowCanvas } from "@/components/itinerary/WorkflowCanvas";
 import { getTripByShareSlug } from "@/lib/itinerary/storage";
 import type { Trip } from "@/lib/itinerary/types";
 
@@ -32,7 +32,7 @@ export default function SharedTripPage({ params }: { params: Promise<{ slug: str
       <div className="mb-3 rounded-xl border border-gold/30 bg-gold/5 p-3 text-xs text-gold">
         🔒 View-only — you're seeing a shared itinerary.
       </div>
-      <WorkflowBuilder initial={trip} readOnly />
+      <WorkflowCanvas initial={trip} readOnly />
     </div>
   );
 }
