@@ -20,15 +20,23 @@ body {
 }
 
 /* Fixed background image — stays still while content scrolls */
+/* Mobile: portrait-oriented background */
 .bg-image {
   position: fixed;
   inset: 0;
   z-index: 0;
-  background-image: url('/fifa_background.png');
+  background-image: url('/fifabackground_1.png');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   will-change: transform;
+}
+
+/* Desktop/web: landscape-oriented background */
+@media (min-width: 768px) {
+  .bg-image {
+    background-image: url('/fifabackground_2.png');
+  }
 }
 
 /* Gradient overlay: strong at bottom, lighter at top so hero imagery shines */

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -23,7 +24,7 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-white/10 bg-black/70 backdrop-blur-lg">
       <div className="container-page flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="inline-block h-7 w-7 rounded-md bg-gold" aria-hidden />
+          <Image src="/fifa_logo.png" alt="FIFA World Cup 2026 logo" width={28} height={28} className="h-7 w-auto" priority />
           <span className="text-sm font-bold tracking-tight sm:text-base">
             World Cup <span className="text-gold">ATL</span> Guide
           </span>
